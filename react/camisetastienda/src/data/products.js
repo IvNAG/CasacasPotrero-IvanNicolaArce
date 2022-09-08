@@ -1,0 +1,58 @@
+export const products = [
+    {
+        id:1,
+        title:"Argentina Titular 22/23",
+        description:"Camiseta Titular Argentina, Temporada 2022/23",
+        price:10,
+        stock:2,
+    },
+    {
+        id:2,
+        title:"Francia Titular 18",
+        description:"Camiseta Titular Francia, Temporada 2018",
+        price:10,
+        stock: 2,
+    },
+    {
+        id:3,
+        title:"Independiente Titular 22/23",
+        description:"Camiseta Titular Independiente, Temporada 2022/23",
+        price:10,
+        stock:2,
+    },
+    {
+        id:4,
+        title:"Argentina Suplente 22/23",
+        description:"Camiseta Suplente Argentina, Temporada 2022/23",
+        price:10,
+        stock: 2,
+    },
+    {
+        id:5,
+        title:"Francia Titular 18",
+        description:"Camiseta Suplente Francia, Temporada 2018",
+        price:10,
+        stock: 2,
+    },
+    {
+        id:6,
+        title:"Manchester City Titular 22/23",
+        description:"Camisetas Manchester City Titular, Temporada 2022/2023",
+        price:10,
+        stock: 2,
+    },
+    {
+        id:7,
+        title:"París Saint-Germain Titular 22/23",
+        description:"Camisetas París Saint-Germain Titular, Temporada 2022/23",
+        price:10,
+        stock: 2,
+    },
+    {
+        id:8,
+        title:"París Saint-Germain Suplente 22/23",
+        description:"Camisetas París Saint-Germain Suplente, Temporada 2022/23",
+        price:10,
+        stock: 2,
+    },
+];

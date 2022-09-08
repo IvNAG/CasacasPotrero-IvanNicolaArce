@@ -1,0 +1,24 @@
+.container-itemdetail{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    width: 25%;
+}
+
+.container-itemdetail-img{
+    width:200px ;
+    height: 200px;
+}
+
+.container-itemdetail-title{
+    font-size: 25px;
+}
+
+.container-itemdetail-description{
+    font-size: 15px;
+}
+
+.container-itemdetail-price{
+    font-size: 20px;
+}

@@ -12,8 +12,6 @@ const ItemCount = ({stock, initial, onAdd}) => {
   const handleAdd = () => {
     if(count < stock){
       setCount(count+1)
-    }else{
-      console.log("No hay stock suficiente")
     }
   }
 
