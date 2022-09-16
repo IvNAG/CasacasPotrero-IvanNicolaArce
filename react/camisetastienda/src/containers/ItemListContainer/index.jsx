@@ -1,38 +1,42 @@
 import React, {useState, useEffect} from 'react'
 import './styles.css'
 import ItemList from '../../components/ItemList'
+import { useParams } from 'react-router-dom'
 
 
 const ItemListContainer = ({greeting}) => {
 
   const [productos, setProductos] = useState([])
-
+  
+  const {categoryId} = useParams;
+  console.log(categoryId);
   useEffect(()=> {
     
-    (async ()=> {
-    // const obtenerProductos = new Promise ((accept, reject)=> {
-    //     setTimeout(()=> {
-    //       accept(products)
-    //     }, 1000);
-    //   })
-        try {
-          const response = await fetch("https://fakestoreapi.com/products");
+    (async () => {
+      try {
+          if (categoryId){
+            const response = await fetch(
+              "https://fakestoreapi.com/products/category/" + categoryId
+          );
           const productos = await response.json();
           setProductos(productos);
-        } catch (error) {
+          }
+          else {
+            const response = await fetch(
+                "https://fakestoreapi.com/products"
+            );
+            const productos = await response.json();
+            setProductos(productos);
+          }
+      } catch (error) {
           console.log(error);
-        }
-      })()
-  }, [])
+      }
+  })();
+}, [categoryId]);
 
 
     
-  return (
-    <div>
-        <p className='ItemListContainer'>{greeting}</p>
-        <ItemList products={productos}/>
-    </div>
-  )
-}
+  return <ItemList products={productos}/>
+};
 
 export default ItemListContainer;
