@@ -29,8 +29,8 @@ export const products = [
     },
     {
         id:5,
-        title:"Francia Titular 18",
-        description:"Camiseta Suplente Francia, Temporada 2018",
+        title:"Alemania Titular Temporada 2022/23",
+        description:"Camiseta Titular Alemania, Temporada 2022/2023",
         price:10,
         stock: 2,
     },
