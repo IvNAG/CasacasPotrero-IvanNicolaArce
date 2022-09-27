@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
+import { useContext } from 'react';
 import { createContext } from "react";
 
 
 export const Shop = createContext();
-
 
 const ShopProvider = ({children}) => {
     
@@ -32,13 +32,30 @@ const ShopProvider = ({children}) => {
     const isInCart = (id) => {
         return cart.some(product => product.id === id)
     }
+
+    const emptyCart = () =>{
+        setCart([])
+    }
+    
+    const removeItem = (id) => {
+        setCart(cart.filter((product) => product.id !== id ))
+    }
+
+    const cartQuantity = () => {
+        return cart.reduce((acc, product) => acc += product.qty,0)
+    }
+
+    const cartTotal = () =>{
+        return cart.reduce((acc, product) => acc += product.price * product.qty, 0)
+    }
+
     return (
-        <Shop.Provider value={{ cart, addItem}}>
+        <Shop.Provider value={{ cart, addItem, isInCart, removeItem , emptyCart, cartQuantity ,cartTotal}}>
             {children}
         </Shop.Provider>
     )
 }
-
+export const useCart = () => useContext(Shop)
 export default ShopProvider;
 
 
