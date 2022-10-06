@@ -12,7 +12,7 @@ const ShopProvider = ({children}) => {
     const addItem = (item) => {
 
         const productoRepetido = isInCart(item.id);
-        console.log(productoRepetido);
+        // console.log(productoRepetido);
         if (productoRepetido) {
             const cartModified = cart.map(product => {
                 if (product.id === item.id) {

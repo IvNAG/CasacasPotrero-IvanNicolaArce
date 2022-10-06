@@ -3,7 +3,7 @@ import Item from "../Item";
 
 
 const ItemList = ({ products }) => {
-  console.log(products);
+  // console.log(products);
   return (
     <div>
       {products.map((product) => {

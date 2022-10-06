@@ -9,7 +9,7 @@ const CartWidget = () => {
     const{cartQuantity} = useCart();
     return (
         <div>
-            <Link><RiShoppingCartFill className='icon-Cart'/>
+            <Link to='/cart'><RiShoppingCartFill className='icon-Cart'/>
                 <Badge pill bg="danger">{cartQuantity() || ''}</Badge>{' '}
             </Link>
         </div>
