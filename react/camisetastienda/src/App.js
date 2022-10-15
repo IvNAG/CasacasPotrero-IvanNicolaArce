@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import NotFound from './components/NotFound';
 import Cart from './containers/CartContainer';
+import CheckOut from './components/Checkout';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/detail/:productId" element={<ItemDetailContainer/>}/>
           <Route path='/cart' element={<Cart/>} />
           <Route path='*' element={<NotFound/>}/>
+          <Route path='/checkout' element={<CheckOut/>}/>
         </Routes> 
       </BrowserRouter>
     </ShopProvider>

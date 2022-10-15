@@ -1,13 +1,17 @@
 import React from "react";
 import { useCart } from "../../context/ShopProvider";
 import {FaTrashAlt} from 'react-icons/fa'
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const { cart, removeItem, emptyCart, cartTotal } = useCart();
-  console.log(cart);
   const total = cartTotal()
+  const navigate = useNavigate()
   return (
     <div>
+      {cart.length === 0
+      ? <h2>El carrito de compra esta vacio.</h2>
+      : <div>
       {cart.map((product) => {
         return (
           <>
@@ -19,11 +23,12 @@ const Cart = () => {
           </>
         );
       })}
-      {cart.length === 0 && <h2>El carrito de compra esta vacio.</h2>}
-      <div>
-        <button onClick={() => emptyCart()}>Vaciar Carro<FaTrashAlt/></button>
-        <h2>${total}</h2>
-      </div>
+        <div>
+          <button onClick={() => emptyCart()}>Vaciar Carro<FaTrashAlt/></button>
+          <h2>${total}</h2>
+          <button onClick={()=>navigate('/checkout')}>Terminar Compra</button>
+        </div>
+      </div>}
     </div>
   );
 };

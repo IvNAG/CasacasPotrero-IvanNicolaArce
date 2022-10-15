@@ -13,34 +13,10 @@ const ItemListContainer = ({greeting}) => {
   const [loading, setLoading] = useState(true)
   
   const {categoryId} = useParams();
-//   useEffect(()=> {
-    
-//     (async () => {
-//       try {
-//           if (categoryId){
-//             const response = await fetch(
-//               "https://fakestoreapi.com/products/category/" + categoryId
-//           );
-//           const productos = await response.json();
-//           setProductos(productos);
-//           }
-//           else {
-//             const response = await fetch(
-//                 "https://fakestoreapi.com/products"
-//             );
-//             const productos = await response.json();
-//             setProductos(productos);
-//             setLoading(false)
-//           }
-//       } catch (error) {
-//           console.log('No se recibio');
-//       }
-//   })();
-// }, [categoryId]);
 
   useEffect(()=>{
     setLoading(true)
-    const coleccionProductos = categoryId ? query(collection(db,"products"), where("category"), "==", categoryId) : collection(db, "products")
+    const coleccionProductos = categoryId ? query(collection(db,"products"), where("category", "==", categoryId)) : collection(db, "products")
     getDocs(coleccionProductos)
     .then((result)=>{
       const lista = result.docs.map((producto)=>{
