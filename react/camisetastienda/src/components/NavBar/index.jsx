@@ -4,9 +4,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CartWidget from '../CartWidget';
 import {Link} from 'react-router-dom';
+import { Text } from '@chakra-ui/react'
 
+const NavBar = ({location}) => {
 
-const NavBar = () => {
+  
+  
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
@@ -14,10 +17,18 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={Link}  to="/">Inicio</Nav.Link>
-            <Nav.Link as={Link} to="/category/Nike">Nike</Nav.Link>
-            <Nav.Link as={Link} to="/category/Adidas">Adidas</Nav.Link>
-            <Nav.Link as={Link} to="/category/Puma">Puma</Nav.Link>
+            <Nav.Link as={Link}  to="/">
+              <Text color={location === '/' ? 'red' : 'black'}>Home</Text>
+            </Nav.Link>
+            <Nav.Link as={Link} to="/category/Nike">
+              <Text color={location === '/category/Nike' ? 'red' : 'black'}>Nike</Text>
+            </Nav.Link>
+            <Nav.Link as={Link} to="/category/Adidas">
+              <Text color={location === '/category/Adidas' ? 'red' : 'black'}>Adidas</Text>
+            </Nav.Link>
+            <Nav.Link as={Link} to="/category/Puma">
+              <Text color={location === '/category/Puma' ? 'red' : 'black'}>Puma</Text>
+            </Nav.Link>
           </Nav>
           <Nav>
             <CartWidget/>

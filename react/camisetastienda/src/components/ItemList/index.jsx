@@ -1,23 +1,21 @@
 import React from "react";
 import Item from "../Item";
-
+import { Flex, Box, Grid } from "@chakra-ui/react";
 
 const ItemList = ({ products }) => {
   // console.log(products);
   return (
-    <div>
+    <Grid w="100%"  justifyContent='center' templateColumns='repeat(3, 1fr)' justifyItems='center' gap='1rem'>
       {products.map((product) => {
         return (
           <>
-          <div className="container">
-              <div className="card-item">
-                <Item key={product.id} product={product} />
-              </div>
-          </div>
+            <Flex h='auto' mt='5vh'>
+              <Item key={product.id} product={product} />
+            </Flex>
           </>
         );
       })}
-    </div>
+    </Grid>
   );
 };
 
